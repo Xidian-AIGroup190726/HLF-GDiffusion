@@ -574,14 +574,13 @@ class GaussianDiffusion:
                 )
 
 
-                #### ILVR ####
                 if resizers is not None:
                     if i > range_t:
                         out["sample"] = out["sample"] - up(down(out["sample"])) + up(
                             down(self.q_sample(cond_pan, t, noise=None)))
                         # print("out",out["sample"].shape)
 
-                            # down(self.q_sample(cond_pan, t, th.randn(*shape, device=device))))
+                        # down(self.q_sample(cond_pan, t, th.randn(*shape, device=device))))
 
                 yield out
                 img = out["sample"]
